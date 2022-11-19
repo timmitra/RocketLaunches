@@ -1,6 +1,7 @@
 /// Copyright (c) 2022 Razeware LLC
 
 import CoreData
+import SwiftUI
 
 extension RocketLaunch {
   
@@ -32,4 +33,9 @@ extension RocketLaunch {
         fatalError("Unresolved Error \(nserror), \(nserror.userInfo)")
       }
     }
+  
+  static func basicFetchRequest() -> FetchRequest<RocketLaunch> {
+    
+    FetchRequest(entity: RocketLaunch.entity(), sortDescriptors: [])
+  }
 }
