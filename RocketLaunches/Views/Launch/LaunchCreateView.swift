@@ -34,20 +34,13 @@ struct LaunchCreateView: View {
       .navigationBarTitle(Text("Create Event"), displayMode: .inline)
       .navigationBarItems(trailing:
         Button(action: {
-          // use the moc viewContext to create instance of RocketLaunch
-          let launch = RocketLaunch(context: self.viewContext)
-          // can now set values and the context will keep track
-          launch.name = self.text
-          launch.notes = self.notes
-          launch.launchpad = self.launchpad
-          launch.isViewed = self.isViewed
-          launch.launchDate = self.launchDate
-        do {
-          try self.viewContext.save()
-        } catch {
-          let nserror = error as NSError
-          fatalError("Unresolved Error \(nserror), \(nserror.userInfo)")
-        }
+        RocketLaunch.createWith(
+          name: self.name,
+          notes: self.notes,
+          launchDate: self.launchDate,
+          isViewed: self.isViewed,
+          launchPad: self.launchpad,
+          using: self.viewContext)
           dismiss()
         }, label: {
           Text("Save")
