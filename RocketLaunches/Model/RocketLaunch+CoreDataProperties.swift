@@ -10,6 +10,7 @@ extension RocketLaunch {
   @NSManaged public var launchDate: Date?
   @NSManaged public var launchPad: String?
   @NSManaged public var notes: String?
+  @NSManaged public var list: RocketLaunchList
   
   static func createWith(
     name: String,
@@ -17,6 +18,7 @@ extension RocketLaunch {
     launchDate: Date,
     isViewed: Bool,
     launchPad: String,
+    in list: RocketLaunchList,
     using managedObjectContext: NSManagedObjectContext) {
       // use the moc viewContext to create instance of RocketLaunch
       let launch = RocketLaunch(context: managedObjectContext)
@@ -26,6 +28,7 @@ extension RocketLaunch {
       launch.launchPad = launchPad
       launch.isViewed = isViewed
       launch.launchDate = launchDate
+      launch.list = list
       do {
         try managedObjectContext.save()
       } catch {
