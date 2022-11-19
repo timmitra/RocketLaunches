@@ -35,7 +35,17 @@ extension RocketLaunch {
     }
   
   static func basicFetchRequest() -> FetchRequest<RocketLaunch> {
-    
     FetchRequest(entity: RocketLaunch.entity(), sortDescriptors: [])
+  }
+  
+  static func sortedFetchRequest() -> FetchRequest<RocketLaunch> {
+    let launchDateSortDescripter = NSSortDescriptor(key: "launchDate", ascending: true)
+    return FetchRequest(entity: RocketLaunch.entity(), sortDescriptors: [launchDateSortDescripter])
+  }
+  
+  static func fetchRequestSortedByNameAndLaunchDate() -> FetchRequest<RocketLaunch> {
+    let nameDateSortDescripter = NSSortDescriptor(key: "name", ascending: true)
+    let launchDateSortDescripter = NSSortDescriptor(key: "launchDate", ascending: true)
+    return FetchRequest(entity: RocketLaunch.entity(), sortDescriptors: [nameDateSortDescripter, launchDateSortDescripter])
   }
 }
