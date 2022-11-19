@@ -10,7 +10,7 @@ struct ListView: View {
   var body: some View {
     Form {
       ForEach(launchList, id: \.self) { launchList in
-        NavigationLink(destination: LaunchesView()) {
+        NavigationLink(destination: LaunchesView(launchList: launchList)) {
           CircularImageView(color: .red)
           Text(launchList.title ?? "")
         }
