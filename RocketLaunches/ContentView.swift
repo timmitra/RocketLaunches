@@ -9,7 +9,8 @@ struct ContentView: View {
 
   var body: some View {
     NavigationView {
-      LaunchesView()
+      //LaunchesView()
+      ListView()
         .navigationBarTitle(Text("Launches"))
         .navigationBarItems(leading: EditButton())
     }
