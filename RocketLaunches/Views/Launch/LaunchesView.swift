@@ -22,7 +22,7 @@ struct LaunchesView: View {
     VStack {
       List {
         Section {
-          ForEach(launches, id: \.self) { launch in
+          ForEach(launchList.launches!, id: \.self) { launch in
             HStack {
               NavigationLink(destination: LaunchDetailView(launch: launch)) {
                 LaunchStatusView(isViewed: launch.isViewed)
