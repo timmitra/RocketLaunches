@@ -12,7 +12,19 @@ struct ContentView: View {
       //LaunchesView()
       ListView()
         .navigationBarTitle(Text("Launches"))
-        .navigationBarItems(leading: EditButton())
+        .navigationBarItems(
+                  trailing:
+                    HStack {
+                      Button(
+                        action: { self.isShowingListModal.toggle() },
+                        label: { Image(systemName: "plus") }
+                      )
+                    }
+                    .sheet(isPresented: $isShowingListModal) {
+                      ListCreateView(text: "")
+                    }
+                )
+        //.navigationBarItems(leading: EditButton())
     }
   }
 }
