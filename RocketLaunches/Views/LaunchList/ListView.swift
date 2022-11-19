@@ -3,10 +3,14 @@
 import SwiftUI
 
 struct ListView: View {
+  
+  @FetchRequest(sortDescriptors: [])
+  var launchList: FetchedResults<RocketLaunchList>
+  
   var body: some View {
     Form {
-      ForEach(1...10, id: \.self) { _ in
-        Text("Test List")
+      ForEach(launchList, id: \.self) { launchList in
+        Text(launchList.title ?? "")
       }
     }
   }
