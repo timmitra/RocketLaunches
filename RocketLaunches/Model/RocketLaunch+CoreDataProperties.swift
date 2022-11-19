@@ -7,7 +7,7 @@ extension RocketLaunch {
   @NSManaged public var name: String
   @NSManaged public var isViewed: Bool
   @NSManaged public var launchDate: Date?
-  @NSManaged public var laudchPad: String?
+  @NSManaged public var launchPad: String?
   @NSManaged public var notes: String?
   
   static func createWith(
@@ -20,13 +20,13 @@ extension RocketLaunch {
       // use the moc viewContext to create instance of RocketLaunch
       let launch = RocketLaunch(context: managedObjectContext)
       // can now set values and the context will keep track
-      launch.name = text
+      launch.name = name
       launch.notes = notes
-      launch.launchpad = launchpad
+      launch.launchPad = launchPad
       launch.isViewed = isViewed
       launch.launchDate = launchDate
       do {
-        try self.managedObjectContext.save()
+        try managedObjectContext.save()
       } catch {
         let nserror = error as NSError
         fatalError("Unresolved Error \(nserror), \(nserror.userInfo)")
