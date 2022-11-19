@@ -34,7 +34,7 @@ struct LaunchesView: View {
       }
       .background(Color.white)
       HStack {
-        NewLaunchButton(isShowingCreateModal: $isShowingCreateModal)
+        NewLaunchButton(isShowingCreateModal: $isShowingCreateModal, launchList: self.launchList)
         Spacer()
       }
       .padding(.leading)
@@ -75,6 +75,7 @@ struct LaunchesView_Previews: PreviewProvider {
 
 struct NewLaunchButton: View {
   @Binding var isShowingCreateModal: Bool
+  let launchList: RocketLaunchList
 
   var body: some View {
     Button(
@@ -87,7 +88,7 @@ struct NewLaunchButton: View {
           .foregroundColor(.red)
       })
       .sheet(isPresented: $isShowingCreateModal) {
-        LaunchCreateView()
+        LaunchCreateView(launchList: launchList)
       }
   }
 }
