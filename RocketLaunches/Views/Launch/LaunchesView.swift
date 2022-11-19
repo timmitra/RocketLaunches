@@ -4,11 +4,13 @@ import SwiftUI
 
 struct LaunchesView: View {
   @State var isShowingCreateModal = false
-  let launchesFetchRequest = RocketLaunch.unViewedLaunchesFetchRequest()
+  let launchesFetchRequest: FetchRequest<RocketLaunch>
   var launches: FetchedResults<RocketLaunch> {
     // wrapped value makes it easier to access values
     launchesFetchRequest.wrappedValue
   }
+  
+  let launchList: RocketLaunchList
   
   let sortTypes = [
     (name: "Name", descriptors: [SortDescriptor(\RocketLaunch.name, order: .forward)]),
@@ -16,13 +18,17 @@ struct LaunchesView: View {
   ]
   
   @State var activeSortIndex = 0
-  let launchList: RocketLaunchList
+  
+  init(launchList: RocketLaunchList) {
+    self.launchList = launchList
+    self.launchesFetchRequest = RocketLaunch.launches(in: launchList)
+  }
   
   var body: some View {
     VStack {
       List {
         Section {
-          ForEach(launchList.launches!, id: \.self) { launch in
+          ForEach(launches, id: \.self) { launch in
             HStack {
               NavigationLink(destination: LaunchDetailView(launch: launch)) {
                 LaunchStatusView(isViewed: launch.isViewed)
