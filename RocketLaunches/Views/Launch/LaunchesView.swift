@@ -18,6 +18,17 @@ struct LaunchesView: View {
   ]
   
   @State var activeSortIndex = 0
+  @State var isShowingTagsModal: Bool = false
+  var tags: Array<Tag> {
+    // compactMap because tag is optional
+    // reduce to convert Array to Set of uniques
+    let tagsSet = launchList.launches?.compactMap({$0.tags}).reduce(Set<Tag>(), { result, tags in
+      var result = result
+      result.formUnion(tags)
+      return result
+    })
+    return Array(tagsSet!)
+  }
   
   init(launchList: RocketLaunchList) {
     self.launchList = launchList
@@ -49,6 +60,13 @@ struct LaunchesView: View {
     .onChange(of: activeSortIndex) { _ in
       launches.sortDescriptors = sortTypes[activeSortIndex].descriptors
     }
+    .navigationBarItems(trailing:
+                          Button(action: { self.isShowingTagsModal.toggle() }) {
+      Text("tags")
+    }.sheet(isPresented: self.$isShowingTagsModal, content: {
+      TagsView(tags: self.tags)
+    })
+    )
     .toolbar {
           Menu(content: {
             Picker(
