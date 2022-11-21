@@ -22,6 +22,7 @@
 		2AEC72C329297F1000B952A7 /* ListCreateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AEC72C229297F1000B952A7 /* ListCreateView.swift */; };
 		2AEC72C6292B20CD00B952A7 /* Tag+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AEC72C4292B20CD00B952A7 /* Tag+CoreDataClass.swift */; };
 		2AEC72C7292B20CD00B952A7 /* Tag+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AEC72C5292B20CD00B952A7 /* Tag+CoreDataProperties.swift */; };
+		2AEC72CB292B34C300B952A7 /* TagsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AEC72CA292B34C300B952A7 /* TagsView.swift */; };
 		AE1D5CE827C2A1120033125A /* LaunchDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE1D5CE727C2A1120033125A /* LaunchDetailView.swift */; };
 		AE5BF31627C47A17009B0282 /* RocketLaunchesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE5BF31527C47A17009B0282 /* RocketLaunchesTests.swift */; };
 		AEF7FB8227C1856F000CBF46 /* LaunchesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEF7FB8127C1856F000CBF46 /* LaunchesView.swift */; };
@@ -57,6 +58,7 @@
 		2AEC72C229297F1000B952A7 /* ListCreateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListCreateView.swift; sourceTree = "<group>"; };
 		2AEC72C4292B20CD00B952A7 /* Tag+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Tag+CoreDataClass.swift"; sourceTree = "<group>"; };
 		2AEC72C5292B20CD00B952A7 /* Tag+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Tag+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		2AEC72CA292B34C300B952A7 /* TagsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagsView.swift; sourceTree = "<group>"; };
 		AE1D5CE727C2A1120033125A /* LaunchDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchDetailView.swift; sourceTree = "<group>"; };
 		AE5BF31327C47A17009B0282 /* RocketLaunchesTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RocketLaunchesTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		AE5BF31527C47A17009B0282 /* RocketLaunchesTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RocketLaunchesTests.swift; sourceTree = "<group>"; };
@@ -174,6 +176,7 @@
 				AEF7FB8527C18583000CBF46 /* LaunchCreateView.swift */,
 				AE1D5CE727C2A1120033125A /* LaunchDetailView.swift */,
 				AEF7FB8927C18598000CBF46 /* LaunchStatusView.swift */,
+				2AEC72CA292B34C300B952A7 /* TagsView.swift */,
 			);
 			path = Launch;
 			sourceTree = "<group>";
@@ -307,6 +310,7 @@
 				2AC8454B2928940800F83023 /* RocketLaunch+CoreDataClass.swift in Sources */,
 				2A10D7AA29275903008DB1EC /* Persistence.swift in Sources */,
 				2A10D7A8292758BC008DB1EC /* RocketLaunches.xcdatamodeld in Sources */,
+				2AEC72CB292B34C300B952A7 /* TagsView.swift in Sources */,
 				AEF7FB8227C1856F000CBF46 /* LaunchesView.swift in Sources */,
 				1839F4B025190F2A00BB00F1 /* RocketLaunchesApp.swift in Sources */,
 				2A8849C729297839008344D9 /* RocketLaunchList+CoreDataProperties.swift in Sources */,
