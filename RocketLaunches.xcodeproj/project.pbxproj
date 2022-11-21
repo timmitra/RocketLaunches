@@ -139,6 +139,14 @@
 			path = LaunchList;
 			sourceTree = "<group>";
 		};
+		2AEC72CC292B3CB900B952A7 /* Tags */ = {
+			isa = PBXGroup;
+			children = (
+				2AEC72CA292B34C300B952A7 /* TagsView.swift */,
+			);
+			path = Tags;
+			sourceTree = "<group>";
+		};
 		AE5BF31427C47A17009B0282 /* RocketLaunchesTests */ = {
 			isa = PBXGroup;
 			children = (
@@ -150,6 +158,7 @@
 		AEF7FB7727C184B6000CBF46 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				2AEC72CC292B3CB900B952A7 /* Tags */,
 				2AEC72BF29297EB300B952A7 /* LaunchList */,
 				AEF7FB7927C184CA000CBF46 /* Launch */,
 			);
@@ -176,7 +185,6 @@
 				AEF7FB8527C18583000CBF46 /* LaunchCreateView.swift */,
 				AE1D5CE727C2A1120033125A /* LaunchDetailView.swift */,
 				AEF7FB8927C18598000CBF46 /* LaunchStatusView.swift */,
-				2AEC72CA292B34C300B952A7 /* TagsView.swift */,
 			);
 			path = Launch;
 			sourceTree = "<group>";
