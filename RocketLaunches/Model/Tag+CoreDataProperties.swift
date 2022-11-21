@@ -44,9 +44,9 @@ extension Tag {
     @NSManaged public var title: String?
     @NSManaged public var launches: Set<RocketLaunch>
   
-  static func fetchOrCreateWith(title: String, in context: NSManagedObjectContext) {
+  static func fetchOrCreateWith(title: String, in context: NSManagedObjectContext) -> Tag {
     let request: NSFetchRequest<Tag> = fetchRequest()
-    let hasTag = NSPredicate(format: "%K == %@", "title", title.lowercased())
+    let predicate = NSPredicate(format: "%K == %@", "title", title.lowercased())
     // add predicate to the fecth request
     request.predicate = predicate
     do {

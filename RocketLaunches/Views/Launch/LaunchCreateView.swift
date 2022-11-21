@@ -15,6 +15,7 @@ struct LaunchCreateView: View {
   @State var isViewed = false
   @State var launchDate = Date()
   @State var launchpad: String = ""
+  @State var tags: String = ""
   
   let launchList: RocketLaunchList
 
@@ -27,6 +28,9 @@ struct LaunchCreateView: View {
           TextField("Notes", text: $notes)
         }
         Section {
+          TextField("Tags", text: $tags)
+        }
+        Section {
           DatePicker(selection: $launchDate, displayedComponents: .date) {
             Text("Date")
           }
@@ -36,12 +40,16 @@ struct LaunchCreateView: View {
       .navigationBarTitle(Text("Create Event"), displayMode: .inline)
       .navigationBarItems(trailing:
         Button(action: {
+        let tags = Set(self.tags.split(separator: ",").map {
+          Tag.fetchOrCreateWith(title: String($0), in: self.viewContext)
+        })
         RocketLaunch.createWith(
           name: self.name,
           notes: self.notes,
           launchDate: self.launchDate,
           isViewed: self.isViewed,
           launchPad: self.launchpad,
+          tags: tags,
           in: self.launchList,
           using: self.viewContext)
         dismiss()
