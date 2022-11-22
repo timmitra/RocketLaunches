@@ -8,4 +8,11 @@ struct SpaceXFairingsJSON: Codable {
   var recovered: Bool?
   var ships: [String]
   var id = UUID()
+  
+  private enum CodingKeys: String, Codable {
+    case reused
+    case recoveryAttempt = "recovery_attempt"
+    case recovered
+    case ships
+  }
 }
