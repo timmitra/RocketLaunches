@@ -1,20 +1,25 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="21512" systemVersion="22A400" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="20086" systemVersion="21E258" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
     <entity name="RocketLaunch" representedClassName="RocketLaunch" syncable="YES">
         <attribute name="isViewed" attributeType="Boolean" defaultValueString="NO" usesScalarValueType="YES"/>
-        <attribute name="launchDate" attributeType="Date" usesScalarValueType="NO"/>
-        <attribute name="launchpad" optional="YES" attributeType="String"/>
-        <attribute name="name" optional="YES" attributeType="String"/>
-        <attribute name="notes" optional="YES" attributeType="String"/>
+        <attribute name="launchDate" attributeType="Date" defaultDateTimeInterval="671853180" usesScalarValueType="NO"/>
+        <attribute name="launchpad" optional="YES" attributeType="String" defaultValueString=""/>
+        <attribute name="name" attributeType="String"/>
+        <attribute name="notes" optional="YES" attributeType="String" defaultValueString=""/>
         <relationship name="list" toMany="YES" deletionRule="Nullify" destinationEntity="RocketLaunchList" inverseName="launches" inverseEntity="RocketLaunchList"/>
         <relationship name="tags" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Tag" inverseName="launches" inverseEntity="Tag"/>
+        <uniquenessConstraints>
+            <uniquenessConstraint>
+                <constraint value="name"/>
+            </uniquenessConstraint>
+        </uniquenessConstraints>
     </entity>
     <entity name="RocketLaunchList" representedClassName="RocketLaunchList" syncable="YES">
         <attribute name="title" attributeType="String"/>
         <relationship name="launches" optional="YES" toMany="YES" deletionRule="Nullify" ordered="YES" destinationEntity="RocketLaunch" inverseName="list" inverseEntity="RocketLaunch"/>
     </entity>
     <entity name="SpaceXFailure" representedClassName="SpaceXFailure" syncable="YES" codeGenerationType="class">
-        <attribute name="altitide" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="altitude" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
         <attribute name="reason" optional="YES" attributeType="String"/>
         <attribute name="time" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
         <relationship name="launch" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="SpaceXLaunch" inverseName="failures" inverseEntity="SpaceXLaunch"/>
@@ -81,7 +86,7 @@
     </entity>
     <entity name="SpaceXLaunchList" representedClassName="SpaceXLaunchList" syncable="YES" codeGenerationType="class">
         <attribute name="title" optional="YES" attributeType="String"/>
-        <relationship name="launches" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="SpaceXLaunch" inverseName="spaceXList" inverseEntity="SpaceXLaunch"/>
+        <relationship name="launches" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="SpaceXLaunch" inverseName="spaceXList" inverseEntity="SpaceXLaunch"/>
         <uniquenessConstraints>
             <uniquenessConstraint>
                 <constraint value="title"/>
@@ -110,4 +115,15 @@
         <attribute name="title" attributeType="String"/>
         <relationship name="launches" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="RocketLaunch" inverseName="tags" inverseEntity="RocketLaunch"/>
     </entity>
+    <elements>
+        <element name="RocketLaunch" positionX="-63" positionY="-18" width="128" height="134"/>
+        <element name="RocketLaunchList" positionX="-54" positionY="27" width="128" height="59"/>
+        <element name="SpaceXFailure" positionX="-45" positionY="45" width="128" height="89"/>
+        <element name="SpaceXFairings" positionX="-36" positionY="54" width="128" height="119"/>
+        <element name="SpaceXLaunch" positionX="-27" positionY="63" width="128" height="404"/>
+        <element name="SpaceXLaunchCore" positionX="-18" positionY="72" width="128" height="179"/>
+        <element name="SpaceXLaunchList" positionX="0" positionY="81" width="128" height="59"/>
+        <element name="SpaceXLinks" positionX="18" positionY="90" width="128" height="179"/>
+        <element name="Tag" positionX="-36" positionY="54" width="128" height="74"/>
+    </elements>
 </model>
