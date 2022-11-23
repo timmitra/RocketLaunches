@@ -9,7 +9,7 @@ struct SpaceXFairingsJSON: BatchInsertable {
   var ships: [String]
   var id = UUID()
   
-  private enum CodingKeys: String, Codable {
+  private enum CodingKeys: String, CodingKey {
     case reused
     case recoveryAttempt = "recovery_attempt"
     case recovered

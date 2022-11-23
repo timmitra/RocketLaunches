@@ -88,7 +88,7 @@ struct LaunchesView: View {
 
 struct LaunchesView_Previews: PreviewProvider {
   static var previews: some View {
-    let context = PersistenceContoller.preview.container.viewContext
+    let context = PersistenceController.preview.container.viewContext
     //let newLaunch = RocketLaunch(context: context)
     //newLaunch.name = "A really cool launch"
     let newLaunchList = RocketLaunchList(context: context)

@@ -64,7 +64,7 @@ struct LaunchCreateView: View {
 
 struct LaunchCreateView_Previews: PreviewProvider {
   static var previews: some View {
-    let context = PersistenceContoller.preview.container.viewContext
+    let context = PersistenceController.preview.container.viewContext
     let newLaunchList = RocketLaunchList(context: context)
     newLaunchList.title = "Preview List"
     return LaunchCreateView(launchList: newLaunchList).environment(\.managedObjectContext, context)

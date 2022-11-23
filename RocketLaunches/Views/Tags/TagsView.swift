@@ -25,7 +25,7 @@ struct TagsView: View {
 
 struct TagsView_Previews: PreviewProvider {
     static var previews: some View {
-      let context = PersistenceContoller.preview.container.viewContext
+      let context = PersistenceController.preview.container.viewContext
       let tag = Tag(context: context)
       tag.title = "preview tag"
       return TagsView(tags:[tag])

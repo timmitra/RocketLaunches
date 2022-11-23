@@ -35,7 +35,7 @@ struct CircularImageView: View {
 
 struct ListView_Previews: PreviewProvider {
   static var previews: some View {
-    let context = PersistenceContoller.preview.container.viewContext
+    let context = PersistenceController.preview.container.viewContext
     return ListView().environment(\.managedObjectContext, context)
   }
 }

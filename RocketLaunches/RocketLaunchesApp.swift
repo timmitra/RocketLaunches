@@ -6,7 +6,7 @@ import SwiftUI
 @main
 struct RocketLaunchesApp: App {
   
-  let persistenceController = PersistenceContoller.shared
+  let persistenceController = PersistenceController.shared
   
   var body: some Scene {
     WindowGroup {
