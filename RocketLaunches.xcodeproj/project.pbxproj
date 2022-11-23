@@ -14,6 +14,8 @@
 		18D775D822AD963800AE281E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18D775DA22AD963800AE281E /* LaunchScreen.storyboard */; };
 		2A10D7A8292758BC008DB1EC /* RocketLaunches.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 2A10D7A6292758BC008DB1EC /* RocketLaunches.xcdatamodeld */; };
 		2A10D7AA29275903008DB1EC /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A10D7A929275903008DB1EC /* Persistence.swift */; };
+		2A1D8CEB292DDED300AEF516 /* SpaceXLaunchDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A1D8CEA292DDED300AEF516 /* SpaceXLaunchDetailView.swift */; };
+		2A1D8CED292DDF1900AEF516 /* SpaceXLaunchesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A1D8CEC292DDF1900AEF516 /* SpaceXLaunchesView.swift */; };
 		2A8849C629297839008344D9 /* RocketLaunchList+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A8849C429297839008344D9 /* RocketLaunchList+CoreDataClass.swift */; };
 		2A8849C729297839008344D9 /* RocketLaunchList+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A8849C529297839008344D9 /* RocketLaunchList+CoreDataProperties.swift */; };
 		2AC8454B2928940800F83023 /* RocketLaunch+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AC8454A2928940800F83023 /* RocketLaunch+CoreDataClass.swift */; };
@@ -54,6 +56,8 @@
 		18D775DE22AD96B400AE281E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2A10D7A7292758BC008DB1EC /* RocketLaunches.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = RocketLaunches.xcdatamodel; sourceTree = "<group>"; };
 		2A10D7A929275903008DB1EC /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
+		2A1D8CEA292DDED300AEF516 /* SpaceXLaunchDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpaceXLaunchDetailView.swift; sourceTree = "<group>"; };
+		2A1D8CEC292DDF1900AEF516 /* SpaceXLaunchesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpaceXLaunchesView.swift; sourceTree = "<group>"; };
 		2A8849C429297839008344D9 /* RocketLaunchList+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RocketLaunchList+CoreDataClass.swift"; sourceTree = "<group>"; };
 		2A8849C529297839008344D9 /* RocketLaunchList+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RocketLaunchList+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		2AC8454A2928940800F83023 /* RocketLaunch+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RocketLaunch+CoreDataClass.swift"; sourceTree = "<group>"; };
@@ -213,6 +217,8 @@
 				AEF7FB8527C18583000CBF46 /* LaunchCreateView.swift */,
 				AE1D5CE727C2A1120033125A /* LaunchDetailView.swift */,
 				AEF7FB8927C18598000CBF46 /* LaunchStatusView.swift */,
+				2A1D8CEA292DDED300AEF516 /* SpaceXLaunchDetailView.swift */,
+				2A1D8CEC292DDF1900AEF516 /* SpaceXLaunchesView.swift */,
 			);
 			path = Launch;
 			sourceTree = "<group>";
@@ -342,10 +348,12 @@
 			files = (
 				2AC8454D292894F300F83023 /* RocketLaunch+CoreDataProperties.swift in Sources */,
 				2AEC72C129297ED100B952A7 /* ListView.swift in Sources */,
+				2A1D8CED292DDF1900AEF516 /* SpaceXLaunchesView.swift in Sources */,
 				18D775C522AD944300AE281E /* ContentView.swift in Sources */,
 				2AC8454B2928940800F83023 /* RocketLaunch+CoreDataClass.swift in Sources */,
 				2AEC72CF292C62D200B952A7 /* SpaceXAPI.swift in Sources */,
 				2A10D7AA29275903008DB1EC /* Persistence.swift in Sources */,
+				2A1D8CEB292DDED300AEF516 /* SpaceXLaunchDetailView.swift in Sources */,
 				2A10D7A8292758BC008DB1EC /* RocketLaunches.xcdatamodeld in Sources */,
 				2AEC72CB292B34C300B952A7 /* TagsView.swift in Sources */,
 				AEF7FB8227C1856F000CBF46 /* LaunchesView.swift in Sources */,
