@@ -5,7 +5,7 @@ import CoreData
 
 struct ContentView: View {
   @State var isShowingListModal = false
-
+  
   var body: some View {
     NavigationView {
       ListView()
@@ -36,7 +36,7 @@ struct ContentView: View {
           } catch {
             print("Error getting lunch lists \(error)")
           }
-    }
+        }
     }
   }
 }
