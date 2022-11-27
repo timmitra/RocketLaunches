@@ -140,7 +140,7 @@ struct PersistenceController {
         list.title = "Latest"
       }
       try context.save()
-      print("Saved lists")
+      print("Saved SpaceX lists")
     }
   }
 
