@@ -8,7 +8,7 @@ extension RocketLaunch {
   @NSManaged public var name: String
   @NSManaged public var isViewed: Bool
   @NSManaged public var launchDate: Date?
-  @NSManaged public var launchPad: String?
+  @NSManaged public var launchpad: String?
   @NSManaged public var notes: String?
   @NSManaged public var list: Set<RocketLaunchList>
   @NSManaged var tags: Set<Tag>?
@@ -20,7 +20,7 @@ extension RocketLaunch {
     notes: String,
     launchDate: Date,
     isViewed: Bool,
-    launchPad: String,
+    launchpad: String,
     tags: Set<Tag> = [],
     in list: RocketLaunchList,
     using managedObjectContext: NSManagedObjectContext) {
@@ -29,7 +29,7 @@ extension RocketLaunch {
       // can now set values and the context will keep track
       launch.name = name
       launch.notes = notes
-      launch.launchPad = launchPad
+      launch.launchpad = launchpad
       launch.tags = tags
       launch.isViewed = isViewed
       launch.launchDate = launchDate

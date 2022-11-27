@@ -48,7 +48,7 @@ struct LaunchCreateView: View {
           notes: self.notes,
           launchDate: self.launchDate,
           isViewed: self.isViewed,
-          launchPad: self.launchpad,
+          launchpad: self.launchpad,
           tags: tags,
           in: self.launchList,
           using: self.viewContext)
