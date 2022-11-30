@@ -33,9 +33,17 @@ struct ListView: View {
             Text(launchList.title!)
           }
         }
+        .onDelete(perform: delete)
       }
     }
-    
+  }
+  func delete(at offsets: IndexSet) {
+    let lists = offsets.map { self.launchLists[$0] }
+    do {
+      try PersistenceController.deleteList(list: lists[0])
+    } catch {
+      print("Error deleting list")
+    }
   }
 }
 
