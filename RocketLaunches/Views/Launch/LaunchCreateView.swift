@@ -16,6 +16,7 @@ struct LaunchCreateView: View {
   @State var launchDate = Date()
   @State var launchpad: String = ""
   @State var tags: String = ""
+  @State var showImagePicker = false
   @State var attachment: UIImage?
   
   let launchList: RocketLaunchList
@@ -36,6 +37,17 @@ struct LaunchCreateView: View {
             Text("Date")
           }
         }
+        Section {
+          if let attachment = attachment {
+            Image(uiImage: attachment)
+              .resizable()
+              .aspectRatio(contentMode: .fit)
+          } else {
+            Button("Pick Image") {
+              showImagePicker.toggle()
+            }
+          }
+        }
       }
       .background(Color(.systemGroupedBackground))
       .navigationBarTitle(Text("Create Event"), displayMode: .inline)
@@ -50,6 +62,7 @@ struct LaunchCreateView: View {
           launchDate: self.launchDate,
           isViewed: self.isViewed,
           launchpad: self.launchpad,
+          attachment: self.attachment,
           tags: tags,
           in: self.launchList,
           using: self.viewContext)
@@ -59,47 +72,51 @@ struct LaunchCreateView: View {
             .fontWeight(.bold)
         })
       )
+      .sheet(isPresented: $showImagePicker) {
+        ImagePicker(selectedImage: $attachment)
+      }
     }
   }
   struct ImagePicker: UIViewControllerRepresentable {
     @Environment(\.dismiss) private var dismiss
     var sourceType: UIImagePickerController.SourceType = .photoLibrary
     @Binding var selectedImage: UIImage
-
+    
     func makeUIViewController(context: UIViewControllerRepresentableContext<ImagePicker>) -> UIImagePickerController {
-
+      
       let imagePicker = UIImagePickerController()
       imagePicker.allowsEditing = false
       imagePicker.sourceType = sourceType
       imagePicker.delegate = context.coordinator
-
+      
       return imagePicker
     }
-
+    
     func updateUIViewController(_ uiViewController: UIImagePickerController, context: UIViewControllerRepresentableContext<ImagePicker>) {
     }
-
+    
     func makeCoordinator() -> Coordinator {
       Coordinator(self)
     }
-
+    
     final class Coordinator: NSObject, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
-
+      
       var parent: ImagePicker
-
+      
       init(_ parent: ImagePicker) {
         self.parent = parent
       }
-
+      
       func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
-
+        
         if let image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
           parent.selectedImage = image
         }
         parent.dismiss()
       }
-
+      
     }
+  }
 }
 
 struct LaunchCreateView_Previews: PreviewProvider {
