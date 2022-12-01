@@ -2,6 +2,7 @@
 
 import CoreData
 import SwiftUI
+import UIKit
 
 extension RocketLaunch {
   
@@ -12,6 +13,7 @@ extension RocketLaunch {
   @NSManaged public var notes: String?
   @NSManaged public var list: Set<RocketLaunchList>
   @NSManaged var tags: Set<Tag>?
+  @NSManaged public var attachment: UIImage?
   
    
   
@@ -21,6 +23,7 @@ extension RocketLaunch {
     launchDate: Date,
     isViewed: Bool,
     launchpad: String,
+    attachment: UIImage?,
     tags: Set<Tag> = [],
     in list: RocketLaunchList,
     using managedObjectContext: NSManagedObjectContext) {
@@ -33,6 +36,7 @@ extension RocketLaunch {
       launch.tags = tags
       launch.isViewed = isViewed
       launch.launchDate = launchDate
+      launch.attachment = attachment
       launch.addToList(list)
       do {
         try managedObjectContext.save()

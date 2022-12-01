@@ -80,7 +80,7 @@ struct LaunchCreateView: View {
   struct ImagePicker: UIViewControllerRepresentable {
     @Environment(\.dismiss) private var dismiss
     var sourceType: UIImagePickerController.SourceType = .photoLibrary
-    @Binding var selectedImage: UIImage
+    @Binding var selectedImage: UIImage?
     
     func makeUIViewController(context: UIViewControllerRepresentableContext<ImagePicker>) -> UIImagePickerController {
       
