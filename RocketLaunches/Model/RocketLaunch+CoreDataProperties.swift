@@ -13,7 +13,7 @@ extension RocketLaunch {
   @NSManaged public var notes: String?
   @NSManaged public var list: Set<RocketLaunchList>
   @NSManaged var tags: Set<Tag>?
-  @NSManaged public var attachment: UIImage?
+  @NSManaged public var attachment: Data?
   
    
   
@@ -36,7 +36,7 @@ extension RocketLaunch {
       launch.tags = tags
       launch.isViewed = isViewed
       launch.launchDate = launchDate
-      launch.attachment = attachment
+      launch.attachment = attachment?.jpegData(compressionQuality: 1) ?? Data()
       launch.addToList(list)
       do {
         try managedObjectContext.save()
